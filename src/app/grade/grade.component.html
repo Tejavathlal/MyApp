@@ -1,0 +1,18 @@
+<p>grade works!</p>
+
+<section>
+    <div>
+<label for="mark">Marks:</label>
+<input type="number" [(ngModel)]="mark" placeholder="Enter Mark" id="mark">
+<br><br>
+
+<button (click)="grade()">Calculate</button>
+
+<h1 *ngIf="mark>=80&&mark<=100">Grade is A</h1>
+<h1 *ngIf="mark>=60&&mark<=80">Grade is B</h1>
+<h1 *ngIf="mark>=40&&mark<=60">Grade is C</h1>
+<h1 *ngIf="mark>=35&&mark<=40">Grade is D</h1>
+<h1 *ngIf="mark>=0&&mark<=35">Grade is Fail</h1>
+<h1>Result is: {{result}}</h1>
+</div>
+</section>

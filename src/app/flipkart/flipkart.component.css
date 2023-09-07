@@ -1,0 +1,41 @@
+.product{
+    height: auto;
+    width: 350px;
+    border: 1px solid black;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px; 
+    background-color: black;
+    
+    
+    
+    
+}
+.fimage{
+    width: 350px;
+    height: 150px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin: auto;
+    
+
+    
+    
+
+}
+.parent{
+    display: flex;
+    flex-wrap: wrap;
+    
+
+}
+.description{
+    white-space: nowrap; 
+    
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+p{
+    color: white;
+    
+}

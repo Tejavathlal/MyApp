@@ -1,0 +1,33 @@
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+div{
+    text-align: center;
+    border-radius: 10px;
+    height: 35%;
+    width:50%;
+    border: 3px solid red;
+
+}
+
+input{
+    height: 40px;
+    width: 250px;
+    padding: 8px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: 2px solid greenyellow;
+
+}
+button{
+    background-color: blue;
+    width: 150px;
+    height: 40px;
+    color: white;
+    border-radius: 8px;
+    border: 2px solid red;
+}

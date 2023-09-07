@@ -1,0 +1,23 @@
+.title{
+    position: fixed;
+    top: 100px;
+    bottom: 100px;
+    right: 100px;
+    width: 50%;
+    background-color:white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid rgb(113, 220, 77);
+    
+}
+button{
+    display: inline;
+    margin: 10px;
+}
+.button1{
+   text-align: center;
+   margin: 10px;
+}
+h1{
+    font-size: 15px;
+}

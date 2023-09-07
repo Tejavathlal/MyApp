@@ -1,0 +1,33 @@
+
+.parent{
+   height: 100%;
+   width: 100%;
+   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+img{
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.product{
+    height: auto;
+    width: 304px;
+    border-radius: 8px;
+    border: 2px solid grey;
+    margin: 10px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+
+}
+
+p{
+    padding: 4px;
+    text-align: center;
+    color: white;
+}

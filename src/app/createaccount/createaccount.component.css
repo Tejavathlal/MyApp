@@ -1,0 +1,16 @@
+input{
+    width:400px;
+}
+section{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+button{
+    display: inline;
+}
+.button1{
+    text-align: center;
+}

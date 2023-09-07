@@ -1,0 +1,40 @@
+
+
+<div class="parent">
+    <header class="first">
+        <div class="first1">
+        <h2>{{book.author}}</h2>
+        <p><img src="" alt="">{{book.birthday}}</p>
+        <p><img src="" alt="">{{book.birthPlace}}</p>
+        </div>
+    
+    <div>
+        <button (click)="add()" class="btn btn-warning">Add New Book</button>
+        <br><br>
+        <button (click)="getSortedBookbyTitle()">Sort By Title</button>
+        <br>
+         <button (click)="getSortBookbyDate()">Sort By Published Date</button>
+    </div>
+    </header>
+    <section class="second">
+        <div class="second1" *ngFor="let b of book.books; let i=index">
+            <div class="dropdown act">
+                <button type="button" class="btn btn-dark dropdown-toggle btn1" data-bs-toggle="dropdown">
+                  Action
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" >Edit</a></li>
+                  <li><a class="dropdown-item" (click)="deleteBook(i)">Delete</a></li>
+                </ul>
+              </div>
+              <img class="image" src="{{book.books[i].imageUrl}}" alt="">
+              <h4 style="text-align: left;">{{book.books[i].title}}</h4>
+              <p style="text-align: left;"><img width="24" height="24"
+                src="https://img.icons8.com/external-others-phat-plus/24/external-business-business-outline-others-phat-plus-15.png"
+                alt="external-business-business-outline-others-phat-plus-15">
+                {{book.books[i].PublishDate}}</p>
+              <a href="{{book.books[i].purchaseLink}}" target="_blank" class="btn btn-primary btn2">BUY NOW</a>
+        </div>
+    </section>
+</div>
+<app-createroald *ngIf="istrue"></app-createroald>

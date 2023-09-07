@@ -1,0 +1,160 @@
+.d1 {
+    color: white;
+  }
+  p{
+    font-size: 20px;
+  }
+  
+  .bb {
+    width: 100%;
+    background-color: rgb(182, 176, 176);
+  
+  }
+  
+  .act {
+    text-align: right;
+    margin-bottom: 5px;
+  }
+  
+  .first {
+    background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px;
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+  
+  }
+  
+  .d2>button {
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid white;
+    margin: 5px;
+    cursor: pointer;
+  
+  }
+  
+  #anb {
+    background-color: rgb(246, 170, 19);
+  }
+  
+  .link-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .link-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .second {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .cardd {
+    width: 45%;
+    height: 540px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  .bimg {
+    width: 100%;
+    height: 340px;
+  }
+  
+  @media screen and (max-width:540px) {
+    .d1 {
+      color: white;
+    }
+  
+  
+    .bb {
+      width: 100%;
+      background-color: rgb(182, 176, 176);
+  
+    }
+  
+    .act {
+      text-align: right;
+      margin-bottom: 5px;
+    }
+  
+    .first {
+      background-color: blue;
+      padding: 20px;
+      border-radius: 5px;
+      margin-left: 20px;
+      margin-right: 20px;
+      
+  
+    }
+  
+    .d2>button {
+      width: 250px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid white;
+      margin: 5px;
+      cursor: pointer;
+      
+  
+    }
+  
+    #anb {
+      background-color: rgb(246, 170, 19);
+    }
+  
+    .link-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  
+    .link-button:hover {
+      background-color: #0056b3;
+    }
+  
+    .second {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .cardd {
+      width: 95%;
+      height: 540px;
+      background-color: white;
+      border-radius: 5px;
+      text-align: center;
+      margin: 20px;
+      padding: 20px;
+    }
+  
+    .bimg {
+      width: 100%;
+      height: 340px;
+    }
+  
+  
+  }

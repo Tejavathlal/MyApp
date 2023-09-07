@@ -1,0 +1,42 @@
+
+
+p{
+    font-size: 40px;
+    text-align: center;
+    color: red;
+    
+}
+
+input{
+    height: 45px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+
+
+}
+button{
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+    margin-left: 10px;
+}
+select{
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid red;
+    margin-right: 10px;
+}
+
+label{
+    font-size: 20px;
+}
+
+.parent{
+    display: flex;
+    justify-content: space-around;
+}

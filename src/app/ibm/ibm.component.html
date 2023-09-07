@@ -1,0 +1,27 @@
+
+
+<div class="parent">
+    <div class="left">
+        <h1>BMI</h1>
+
+
+        
+
+        <label for="">Height:</label>
+<input type="number" [(ngModel)]="height">
+
+        <br>
+       
+
+        <label for="">Weight:</label>
+<input type="number" [(ngModel)]="weight">
+
+        <br>
+
+
+        <button (click)="cal()">Calculate</button>
+        <br>
+
+        <h1>Result is: {{result}}</h1>
+    </div>
+</div>

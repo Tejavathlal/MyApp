@@ -1,0 +1,37 @@
+
+<div class="bb">
+    <header class="first">
+        <div class="d1">
+            <h2>{{book.author}}</h2>
+            <p><img width="24" height="24" src="assets/icons8-cake-24.png" alt="birthday" />&nbsp;{{book.birthday}}</p>
+            <p><img width="24" height="24" src="assets/icons8-home-24.png" alt="birthday" />&nbsp;{{book.birthPlace}}
+            </p>
+        </div>
+        <div class="d2">
+            <button id="anb" (click)="add()" >Add New Book</button> <br><br>
+            <button (click)="getSortedBooksbyTitle()">Sort By Title</button> <br>
+            <button (click)="getSortedBooksbyDate()">Sort By Published Date</button>
+        </div>
+
+    </header>
+    <section class="second">
+        <div class="cardd" *ngFor="let b of book.books;let i=index">
+            <div class="dropdown act">
+                <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown">
+                    Actions
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item">Edit</a></li>
+                    <li><a class="dropdown-item" (click)="deleteBook(i)">Delete</a></li>
+                </ul>
+            </div>
+            <img class="bimg" src="{{book.books[i].imageUrl}}" alt="">
+            <h4 style="text-align: left;">{{book.books[i].title}}</h4>
+            <p style="text-align: left;"><img width="24" height="24"
+                    src="https://img.icons8.com/external-others-phat-plus/24/external-business-business-outline-others-phat-plus-15.png"
+                    alt="external-business-business-outline-others-phat-plus-15" /> {{book.books[i].PublishDate}}</p>
+            <a href="{{book.books[i].purchaseLink}}" target="_blank" class="link-button">BUY NOW</a>
+        </div>
+    </section>
+</div>
+<app-createbook *ngIf="istrue"></app-createbook>

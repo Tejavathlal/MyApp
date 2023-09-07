@@ -1,0 +1,24 @@
+  img{
+    height: 30%;
+    width: 30%;
+  }
+.parent{
+    height: 100%;
+    width: 100%;
+    
+    
+}
+p{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin-left: 100px;
+    
+}
+.child{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    
+}

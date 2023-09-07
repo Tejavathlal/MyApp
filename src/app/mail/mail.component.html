@@ -1,0 +1,14 @@
+<div class="parent">
+
+    <div class="child" *ngFor="let mail of mails">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/ICICI_Bank_Logo.svg/2560px-ICICI_Bank_Logo.svg.png"
+            alt="">
+        <div [ngStyle]="{'color': mail.completed==true ? 'grey' : 'black'}">
+        <!-- <p>{{mail.userId}}</p> -->
+        <p>{{mail.title}}</p>
+        <p >{{mail.completed}}</p>
+        <p>{{mail.id}}</p>
+    </div>
+</div>
+</div>

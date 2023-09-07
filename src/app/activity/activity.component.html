@@ -1,0 +1,16 @@
+
+
+<div class="parent">
+
+    <div class="product" *ngFor="let a of activitys">
+
+        <p>Activity: {{a.activity}}</p>
+        <p>Type: {{a.type}}</p>
+        <p>Participants: {{a.participants}}</p>
+        <p>Price: {{a.price}}</p>
+        <p>Link: {{a.link}}</p>
+        <p>Key: {{a.key}}</p>
+        <p>Accessibility: {{a.accessibility}}</p>
+        <button class="btn btn-danger" (click)="reload()">Sumbit</button>
+    </div>
+</div>

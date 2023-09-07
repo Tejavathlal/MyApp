@@ -1,0 +1,27 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-data-binding',
+  templateUrl: './data-binding.component.html',
+  styleUrls: ['./data-binding.component.css']
+})
+export class DataBindingComponent {
+
+  public age:number = 25;
+  public name:string = "Teja";
+  public isIndian:boolean = true;
+
+  submit(){
+    alert("submit clicked");
+  }
+
+  cancel(){
+    alert("cancel double clicked");
+  }
+
+  typed(){
+    alert("typed something");
+  }
+  public phone:string= "+91 ";
+}
+

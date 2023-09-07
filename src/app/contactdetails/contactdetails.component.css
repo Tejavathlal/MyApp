@@ -1,0 +1,18 @@
+input{
+    width:400px;
+}
+section{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+button{
+    display: inline;
+    margin: 10px;
+}
+.button1{
+    text-align: center;
+    margin: 10px;
+}

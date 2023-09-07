@@ -1,0 +1,52 @@
+.parent{
+    width:100vw;
+    height: 100vh;
+    background-color: #00ff00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.child{
+    width: 350px;
+    height: 400px;
+    background-color:white;
+    margin: 20px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    
+    
+
+    
+}
+button{
+    height: 40px;
+    width: 140px;
+    border-radius: 8px;
+    background-color: red;
+    font-size: 20px;
+    color: white;
+    border: 1px solid gray;
+}
+input{
+    width: 250px;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 10px;
+    color: black;
+}
+label{
+    
+    font-size: 25px;
+    color: red;
+    
+}
+h1{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+

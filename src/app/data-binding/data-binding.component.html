@@ -1,0 +1,20 @@
+<p>data-binding works!</p>
+
+<h2>My name is {{name}}</h2>
+<h4>My age is {{age}}</h4>
+<h4>I'm i indian:{{isIndian}}</h4>
+
+
+<button (click)="submit()">Submit</button>
+
+<button (dblclick)="cancel()">cancel</button>
+
+
+<input type="text" (keypress)="typed()">
+
+<br><br>
+<label for="">Phone:</label>
+<input type="text" [(ngModel)]="phone">
+
+
+<h3>PHONE:{{phone}}</h3>
