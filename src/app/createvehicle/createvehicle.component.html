@@ -28,9 +28,65 @@
             <label  class="form-label">Color:</label>
             <input type="text" class="form-control" id="color" placeholder="Enter Color" formControlName="color">
           </div>
+          <div formGroupName="address">
+            <div class="mb-3 mt-3">
+              <label  class="form-label">Online:</label>
+              <input type="text" class="form-control" id="color" placeholder="Enter Online Payment" formControlName="online">
+            </div>
+            <div class="mb-3 mt-3">
+              <label  class="form-label">Select:</label>
+              <input type="text" class="form-control" id="color" placeholder="Enter Select" formControlName="select">
+            </div>
+            <div class="mb-3 mt-3">
+              <label  class="form-label">Transaction:</label>
+              <input type="text" class="form-control" id="color" placeholder="Enter Transaction" formControlName="transaction">
+            </div>
+          </div>
+          <div class="mb-3 mt-3">
+            <label class="form-label">Payment:</label>
+            <input type="radio"   name="payment"   formControlName="payment" value="vehicle" style="width: 30px;">
+            <label class="form-label">Vehicle</label>
+            <input type="radio"   name="payment"  formControlName="payment" value="number" style="width: 30px;">
+            <label class="form-label">Number</label>
+  
+            <div class="mb-3 mt-3" *ngIf="vehicleForm.get('payment')?.value =='vehicle'">
+              <label class="form-label">Vehicle:</label>
+              <input type="number" class="form-control" placeholder="Enter vehicle" formControlName="tax">
+            </div>
+    
+            <div class="mb-3 mt-3" *ngIf="vehicleForm.get('payment')?.value == 'number'">
+              <label class="form-label">Number</label>
+              <input type="number" class="form-control"  placeholder="Enter number" formControlName="fitnes">
+            </div>
+          </div>
+
+          <button (click)="addVehicle()" class="btn btn-warning">Add Vehicle</button>
+          <div formArrayName="cards">
+            <div *ngFor="let card of cardsFormArray.controls; let i= index">
+              <div formGroupName="{{i}}">
+                <div class="mb-3 mt-3">
+                  <label  class="form-label">Booking:</label>
+                  <input type="text" class="form-control" id="color" placeholder="Enter Booking" formControlName="booking">
+                </div>
+                <div class="mb-3 mt-3">
+                  <label  class="form-label">License:</label>
+                  <input type="text" class="form-control" id="color" placeholder="Enter License" formControlName="license">
+                </div>
+                <div class="mb-3 mt-3">
+                  <label  class="form-label">Driving:</label>
+                  <input type="text" class="form-control" id="color" placeholder="Enter Driving" formControlName="driving">
+                </div>
+                <div>
+                  <button (click)="deleteVehicle(i)" class="btn btn-success">Delete</button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="button1">
             <button type="button" class="btn btn-primary" (click)="submit()">Submit</button>
           </div>
+          
           </form>
 
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { VehiclesService } from '../vehicles.service';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vehicles',
@@ -20,7 +21,7 @@ export class VehiclesComponent {
   public page: string = "";
 
   public data:string = "";
-  constructor(private _vehiclesService: VehiclesService) {
+  constructor(private _vehiclesService: VehiclesService, private router:Router) {
 
 
     _vehiclesService.getVehicles().subscribe(
@@ -83,7 +84,8 @@ export class VehiclesComponent {
 
     )
   }
-
   
-
+  view(id:number){
+    this.router.navigateByUrl("/dashboard/vehicledetails/" +id);
+  }
 }

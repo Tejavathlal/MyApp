@@ -17,8 +17,60 @@
             <label class="form-label">City:</label>
             <input type="text" class="form-control" id="vehicle" placeholder="Enter City" formControlName="city">
           </div>
+          <div formGroupName="bank">
+            <div class="mb-3 mt-3">
+              <label class="form-label">State:</label>
+              <input type="text" class="form-control" id="vehicle" placeholder="Enter state" formControlName="state">
+            </div>
+            <div class="mb-3 mt-3">
+              <label class="form-label">Country:</label>
+              <input type="text" class="form-control" id="vehicle" placeholder="Enter Country" formControlName="country">
+            </div>
+            <div class="mb-3 mt-3">
+              <label class="form-label">Mandal:</label>
+              <input type="text" class="form-control" id="vehicle" placeholder="Enter Mandal" formControlName="mandal">
+            </div>
+          </div>
+
+          <div class="mb-3 mt-3">
+            <label class="form-label">ATM</label>
+            <input type="radio"  name="atm" placeholder="Enter Pin Number" value="balance" formControlName="atm" style="width: 30px;">
+            <label class="form-label">PIN Number</label>
+            <input type="radio"  name="atm" placeholder="Enter Balance" value="number" formControlName="atm" style="width: 30px;">
+            <label class="form-label">Available Balance</label>
+
+            <div class="mb-3 mt-3" *ngIf="bankForm.get('atm')?.value == 'balance' ">
+              <label class="form-label">Balance:</label>
+              <input type="number" class="form-control"  placeholder="Enter Mandal" formControlName="balance">
+            </div>
+            <div class="mb-3 mt-3" *ngIf="bankForm.get('atm')?.value == 'number' ">
+              <label class="form-label">Account:</label>
+              <input type="number" class="form-control"  placeholder="Enter Mandal" formControlName="number">
+            </div>
+          </div>
+        
+          <button (click)="addBanks()" class="btn btn-dark">Add Bank</button>
+          <div formArrayName="banks">
+            <div *ngFor="let banks of banksArrayFrom.controls; let i = index">
+              <div formGroupName="{{i}}">
+                <div class="mb-3 mt-3">
+                  <label class="form-label">Account:</label>
+                  <input type="text" class="form-control" id="vehicle" placeholder="Enter Account" formControlName="account">
+                </div>
+                <div class="mb-3 mt-3">
+                  <label class="form-label">Details:</label>
+                  <input type="text" class="form-control" id="vehicle" placeholder="Enter Details" formControlName="details">
+                </div>
+                <div class="mb-3 mt-3">
+                  <label class="form-label">Sort Code:</label>
+                  <input type="text" class="form-control" id="vehicle" placeholder="Enter Sort Code" formControlName="sortCode">
+                </div>
+                <button (click)="bankDel(i)" class="btn btn-primary">Delete</button>
+              </div>
+            </div>
+          </div>
           <div class="button1">
-            <button type="button" class="btn btn-danger" (click)="submit()">Create Account Name</button>
+            <button type="button" class="btn btn-danger" (click)="submit()">Create Account</button>
           </div>
     </form>
 </section>

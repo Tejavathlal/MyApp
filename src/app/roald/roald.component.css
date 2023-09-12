@@ -2,6 +2,7 @@
 .parent{
     width: 100%;
     background-color: antiquewhite;
+    height: 100%;
 }
 .first1{
     color: white;
@@ -15,6 +16,12 @@
     padding: 30px;
     margin-left: 50px;
     margin-right: 50px;
+    
+    
+    
+    
+
+    
 
 }
 .second{
@@ -53,4 +60,26 @@ button{
 .btn2{
     width: 120px;
     height: 50px;
+     padding: 12px;
+}
+.title{
+    position: fixed;
+    top: 100px;
+    bottom: 100px;
+    right: 100px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid black;
+    height: 580px;
+    width: 40%;
+    
+    
+}
+.submit{
+   width: 100px;
+   height: 40px;
+}
+input{
+    width: 400px;
+
 }

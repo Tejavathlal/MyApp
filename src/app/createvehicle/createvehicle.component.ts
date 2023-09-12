@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms'
+import { FormArray, FormControl, FormGroup } from '@angular/forms'
 import { VehiclesService } from '../vehicles.service';
 
 
@@ -18,7 +18,31 @@ export class CreatevehicleComponent {
        type: new FormControl(),
        fuel: new FormControl(),
        color: new FormControl(),
+       address: new FormGroup({
+        online:new FormControl(),
+        select: new FormControl(),
+        transaction: new FormControl()
+       }),
+       payment: new FormControl(),
+       tax: new FormControl(),
+       fitnes: new FormControl(),
+
+       cards: new FormArray([])
   });
+     
+
+  get cardsFormArray(){
+    return this.vehicleForm.get('cards') as FormArray;
+  }
+  addVehicle(){
+    this.cardsFormArray.push(
+    new FormGroup({
+      booking: new FormControl(),
+      license: new FormControl(),
+      driving: new FormControl(),
+    })
+    )
+  }
 
  constructor(private vehicleService:VehiclesService){}
   submit(){
@@ -32,5 +56,8 @@ export class CreatevehicleComponent {
       alert("Vehicle Creation Failed");
     }
    )
+  }
+  deleteVehicle(i:number){
+    this.cardsFormArray.removeAt(i);
   }
 } 

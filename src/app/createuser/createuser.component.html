@@ -4,11 +4,22 @@
     <div class="mb-3 mt-3">
         <label class="form-label">Name:</label>
         <input type="text" class="form-control" id="vehicle" placeholder="Enter  Name" formControlName="name">
+        <div class="text-danger" *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid">
+         <p *ngIf="userForm.get('name')?.errors?.['required']">Name is required</p>
+         <p *ngIf="userForm.get('name')?.errors?.['minlength']">Name should contain atleast 3 character.</p>
+
+        </div>
       </div>
       <div class="mb-3 mt-3">
         <label class="form-label">Phone:</label>
-        <input type="text" class="form-control" id="vehicle" placeholder="Enter Phone Number" formControlName="phone">
+        <input type="text" class="form-control" id="vehicle" placeholder="Enter Phone Number" formControlName="phone" maxlength="10">
+        <div class="text-primary" *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.invalid">
+          <p *ngIf="userForm.get('phone')?.errors?.['required']">Phone is required</p>
+          <p *ngIf="userForm.get('phone')?.errors?.['min']">Phone Number Should contain 10 Digits.</p>
+          <p *ngIf="userForm.get('phone')?.errors?.['max']">Phone Number Should contain 10 Digits.</p>
+        </div>
       </div>
+
       <div class="mb-3 mt-3">
         <label class="form-label">City:</label>
         <input type="text" class="form-control" id="vehicle" placeholder="Enter City" formControlName="city">
@@ -17,8 +28,78 @@
         <label class="form-label">Fee:</label>
         <input type="text" class="form-control" id="vehicle" placeholder="Enter Fee" formControlName="fee">
       </div>
-     <div class="button1">
-        <button type="button" class="btn btn-danger" (click)="submit()">Submit</button>
+      <div formGroupName="address">
+        <div class="mb-3 mt-3">
+          <label class="form-label">HNo:</label>
+          <input type="text" class="form-control" id="vehicle" placeholder="Enter House Number" formControlName="hno">
+        </div>
+        <div class="mb-3 mt-3">
+          <label class="form-label">State:</label>
+          <select formControlName="state" class="form-control">
+          <input type="text" class="form-control" id="vehicle" placeholder="Enter State Name" formControlName="state">
+          <option>Select</option>
+          <option value="TS">Telangana</option>
+          <option value="AP">Andhra Pradesh</option>
+          </select>
+          <div class="text-success" *ngIf="userForm.get('address')?.get('state')?.touched && userForm.get('address')?.get('state')?.invalid">
+            <p *ngIf="userForm.get('address')?.get('state')?.errors?.['required']">State is required</p>
+
+          </div>
+        </div>
+        <div class="mb-3 mt-3">
+          <label class="form-label">Pin:</label>
+          <input type="text" class="form-control" id="vehicle" placeholder="Enter Pin Number" formControlName="pin">
+        </div>
+        </div>
+        
+        <div class="mb-3 mt-3">
+          <label class="form-label">Type:</label>
+          <input type="radio"   name="type"   formControlName="type" value="dayScholar" style="width: 30px;">
+          <label class="form-label">Day Scholar</label>
+          <input type="radio"   name="type"  placeholder="Enter Fee" formControlName="type" value="residential" style="width: 30px;">
+          <label class="form-label">Residential</label>
+
+          <div class="mb-3 mt-3" *ngIf="userForm.get('type')?.value=='dayScholar'">
+            <label class="form-label" >Bus Fee:</label>
+            <input type="number" class="form-control" placeholder="Enter Bus Fee" formControlName="busFee">
+          </div>
+  
+          <div class="mb-3 mt-3" *ngIf="userForm.get('type')?.value == 'residential'">
+            <label class="form-label">Hostel Fee:</label>
+            <input type="number" class="form-control"  placeholder="Enter Hostel Fee" formControlName="hostelFee">
+          </div>
+        </div>
+         <button (click)="addCards()" class="btn btn-warning third">Add Cards</button>
+         <div formArrayName="cards">
+          <div *ngFor="let cards of cardsFormArray.controls; let i= index">
+            <div formGroupName="{{i}}">
+              <div class="mb-3 mt-3">
+                <label class="form-label">No:</label>
+                <input type="text" class="form-control" id="vehicle" placeholder="Enter Account Number" formControlName="no">
+              </div>
+              <div class="mb-3 mt-3">
+                <label class="form-label">Exp:</label>
+                <input type="text" class="form-control" id="vehicle" placeholder="Enter Expiry Number" formControlName="exp">
+              </div>
+              <div class="mb-3 mt-3">
+                <label class="form-label">CVV:</label>
+                <input type="text" class="form-control" id="vehicle" placeholder="Enter Cvv Number" formControlName="cvv">
+                <div class="text-info" *ngIf="cardsFormArray.controls[i]?.get('cvv')?.touched && cardsFormArray.controls[i]?.get('cvv')?.invalid">
+                 <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['required']">cvv is required</p>
+                 <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['min']">CVV atleast 100</p>
+                 <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['max']">CVV atmost 999</p>
+
+                </div> 
+              </div>
+              <div>
+              <button (click)="deleteCards(i)" class="btn btn-danger button2">Delete Card</button>
+            </div>
+          </div>
+         </div>
+     <div class="text-center">
+        <button type="button" class="btn btn-primary" (click)="submit()">Submit</button>
      </div>
+         </div>
+         
 </form>
 </section>

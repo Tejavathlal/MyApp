@@ -1,4 +1,4 @@
-<p>Vehicles Works!</p>
+
 
 <div class="parent">
 <input type="text" [(ngModel)]="term" (keypress)="getFilteredVehicles()" placeholder="Search Here">
@@ -49,6 +49,7 @@
             <th>Image</th>
             <th>Id</th>
             <th>Delete</th>
+            <th>View</th>
         </tr>
     </thead>
     <tbody>
@@ -66,7 +67,7 @@
    <td>
     <button (click)="deleteVehicles(vehicle.id)" class="btn btn-danger">Delete</button>
    </td>
-
+     <td><button class="btn btn-warning" (click)="view(vehicle.id)">View</button></td>
         </tr>
     </tbody>
 </table>

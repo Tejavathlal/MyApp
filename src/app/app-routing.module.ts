@@ -30,6 +30,7 @@ import { CreateaccountComponent } from './createaccount/createaccount.component'
 import { ContactdetailsComponent } from './contactdetails/contactdetails.component';
 import { authenticationGuard } from './authentication.guard';
 import { notifyGuard } from './notify.guard';
+import { VehicledetailsComponent } from './vehicledetails/vehicledetails.component';
 
 const routes: Routes = [
  
@@ -59,7 +60,8 @@ const routes: Routes = [
     {path: 'createvehicle', component:CreatevehicleComponent},
     {path: 'createuser', component:CreateuserComponent, canDeactivate: [notifyGuard]},
     {path: 'createaccount', component:CreateaccountComponent},
-    {path: 'contactdetails', component:ContactdetailsComponent}
+    {path: 'contactdetails', component:ContactdetailsComponent},
+    {path: 'vehicledetails/:id', component:VehicledetailsComponent}
     
   ]},
   {path:'', component:LoginComponent},
