@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormArray, FormControl, FormGroup } from '@angular/forms'
 import { VehiclesService } from '../vehicles.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { VehiclesService } from '../vehicles.service';
 })
 export class CreatevehicleComponent {
   
+  public id:number = 0;
 
   public vehicleForm: FormGroup = new FormGroup({
        Vehicle: new FormControl(),
@@ -43,8 +45,23 @@ export class CreatevehicleComponent {
     })
     )
   }
+  
+  
+ constructor(private vehicleService:VehiclesService, private activatedRoute: ActivatedRoute){
 
- constructor(private vehicleService:VehiclesService){}
+  activatedRoute.params.subscribe(
+    (data:any)=>{
+      this.id = data.id;
+
+    this.vehicleService.getvehicle(this.id).subscribe(
+        (data:any)=>{
+          this.vehicleForm.patchValue(data);
+        }
+
+      )
+    }
+  )
+ }
   submit(){
     console.log(this.vehicleForm);
    this.vehicleService.createVehicle(this.vehicleForm.value).subscribe(

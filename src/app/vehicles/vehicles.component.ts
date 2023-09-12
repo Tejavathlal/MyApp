@@ -88,4 +88,8 @@ export class VehiclesComponent {
   view(id:number){
     this.router.navigateByUrl("/dashboard/vehicledetails/" +id);
   }
+
+  edit(id:number){
+    this.router.navigateByUrl("/dashboard/edit-vehicles/" +id)
+  }
 }
