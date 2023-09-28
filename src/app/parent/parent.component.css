@@ -1,0 +1,19 @@
+.parent{
+    width: 400px;
+    height: 300px;
+    border-radius: 8px;
+    border: 1px solid gray;
+    margin: 80px;
+    padding: 40px;
+    text-align: center;
+    margin-top: 20px;
+    background-color: aqua;
+}
+input{
+    height: 35px;
+    width: 200px;
+    border-radius: 5px;
+    border: 2px solid blueviolet;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}

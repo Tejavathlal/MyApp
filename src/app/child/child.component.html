@@ -1,0 +1,23 @@
+ 
+ <div>
+ <p>child works!</p>
+
+ <h1>Getting Value from parent</h1>
+<input type="number" [(ngModel)]="bc" (keyup)="send()">
+<h1>Ac: {{ac}}</h1>
+</div> 
+
+
+<img *ngIf="cstar==1" src="/assets\star1.jpeg" alt="">
+<img *ngIf="cstar==2" src="/assets\star2.jpeg" alt="">
+<img *ngIf="cstar==3" src="/assets\star3.jpeg" alt="">
+<img *ngIf="cstar==4" src="/assets\star4.jpeg" alt="">
+<img *ngIf="cstar==5" src="/assets\star5.jpeg" alt=""> 
+
+
+ <div>
+
+<button (click)="add()" class="btn btn-warning">Sum</button>
+<button (click)="sub()" class="btn btn-info">sub</button>
+<button (click)="mul()" class="btn btn-danger">mul</button>
+</div>

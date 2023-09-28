@@ -44,7 +44,9 @@
         <th>City</th>
         <th>Fee</th>
         <th>Id</th>
-        <th>Delete</th>
+        <th colspan="3" class="text-center">Delete</th>
+        <!-- <th>View</th>
+        <th>Edit</th> -->
         </tr>
     </thead>
     <tbody>
@@ -58,7 +60,12 @@
         <td>
             <button (click)="deleteUsers(user.id)" class="btn btn-danger">Delete</button>
         </td>
-            
+        <td>
+            <button (click)="view(user.id)" class="btn btn-info">View</button>
+        </td>
+        <td>
+            <button (click)="edit(user.id)" class="btn btn-warning">Edit</button>
+        </td>
         </tr>
     </tbody>
 </table>

@@ -1,0 +1,27 @@
+<p>parent works!</p>
+
+<input type="number" [(ngModel)]="ap">
+<p>Bp: {{bp}}</p>
+<hr>
+<app-child [ac]="ap" (bEvent)="catch($event)"></app-child>
+
+ <hr>
+
+<label for="">Star Rating:</label><input type="number" [(ngModel)]="pstar">
+<app-child [cstar]="pstar"></app-child>  
+
+
+
+ <div class="parent">
+
+<label for="">Number1:</label>
+<input type="number" [(ngModel)]="number1">
+
+<br>
+
+<label for="">Number2:</label>
+<input type="number" [(ngModel)]="number2">
+<br>
+<p>Result is :{{num}}</p>
+<app-child [c1]="number1" [c2]="number2" (bEvent)="catch($event)" ></app-child>
+</div> 

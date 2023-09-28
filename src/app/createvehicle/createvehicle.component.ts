@@ -63,6 +63,17 @@ export class CreatevehicleComponent {
   )
  }
   submit(){
+    if(this.id){
+      this.vehicleService.updatevehicle(this.id, this.vehicleForm.value).subscribe(
+        (data:any)=>{
+          alert("Updated SuccessFully");
+        },
+        (err:any)=>{
+          alert("Internal Server Error");
+        }
+      )
+    }
+    else{
     console.log(this.vehicleForm);
    this.vehicleService.createVehicle(this.vehicleForm.value).subscribe(
 
@@ -74,6 +85,7 @@ export class CreatevehicleComponent {
     }
    )
   }
+}
   deleteVehicle(i:number){
     this.cardsFormArray.removeAt(i);
   }

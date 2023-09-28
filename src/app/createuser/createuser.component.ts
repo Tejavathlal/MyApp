@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from '../users.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-createuser',
@@ -8,6 +9,8 @@ import { UsersService } from '../users.service';
   styleUrls: ['./createuser.component.css']
 })
 export class CreateuserComponent {
+
+  public id:number = 0;
 
   public userForm: FormGroup = new FormGroup({
     name: new FormControl("",[Validators.required, Validators.minLength(3)]),
@@ -39,8 +42,31 @@ export class CreateuserComponent {
     )
   }
 
-  constructor(private usersService:UsersService){}
+  constructor(private usersService:UsersService,private activatedRoute:ActivatedRoute){
+
+activatedRoute.params.subscribe(
+  (data:any)=>{
+    this.id = data.id;
+    usersService.getUserDe(this.id).subscribe(
+      (data:any)=>{
+        this.userForm.patchValue( data );
+      }
+    )
+  }
+)
+  }
   submit(){
+    if(this.id){
+      this.usersService.updateduser(this.id,this.userForm.value).subscribe(
+        (data:any)=>{
+          alert("Updated SuccessFully");
+        },
+        (err:any)=>{
+          alert("Internal Server Error");
+        }
+      )
+    }
+    else{
     console.log(this.userForm.value);
     this.usersService.createUser(this.userForm.value).subscribe(
        (data:any)=>{
@@ -51,7 +77,7 @@ export class CreateuserComponent {
        }
     )
   }
-
+}
   deleteCards(i:number){
   this.cardsFormArray.removeAt(i);
   }

@@ -1,0 +1,38 @@
+<div class="parent">
+<div class="message">
+  <div class="iphone"></div>
+  <h1>Message</h1>
+</div>
+
+<div class="search">
+  <input type="search" [(ngModel)]="search"  placeholder="Search People">
+</div>
+
+<!-- <ng-container *ngIf="users.results.length > 0; else noRecords"> -->
+
+  <div *ngIf="users.results.length > 0">
+  <div *ngFor="let user of users.results | message:search">
+
+    <div class="user-card">
+      <img [src]="user.picture.large" alt="User Image">
+      <div class="user-info">
+        <h4>{{ user.name.first }} {{ user.name.last }}</h4>
+        <p>ID: {{ user.id.value }}</p>
+        <p>Cell: {{ user.cell }}</p>
+      </div>
+    </div>
+     </div>
+
+    <div *ngIf="(users.results | message:search).length === 0">
+      <p class="no-records">No people found.</p>
+    </div>
+  </div>
+  
+<!-- </ng-container>
+<ng-template #noRecords>
+  <div class="no-records">No people Found</div>
+</ng-template> -->
+
+<!-- <div *ngIf="getfiltermessage.length ===0 && search.length > 0" class="no-records">
+No People Found
+</div> -->

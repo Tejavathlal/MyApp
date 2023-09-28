@@ -1,5 +1,6 @@
 import { Component, TemplateRef } from '@angular/core';
 import { AccountService } from '../account.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account',
@@ -17,7 +18,7 @@ export class AccountComponent {
   public limit:string = "";
   public page:string = "";
 
-  constructor(private _accountService: AccountService) {
+  constructor(private _accountService: AccountService, private router:Router) {
 
     _accountService.getAccount().subscribe(
 
@@ -79,5 +80,12 @@ export class AccountComponent {
         alert("Internal Service Error");
       }
     )
+}
+view(id:number){
+ this.router.navigateByUrl("dashboard/accountdetails/" +id);
+}
+
+edit(id:number){
+  this.router.navigateByUrl("/dashboard/editaccount/" +id);
 }
 }

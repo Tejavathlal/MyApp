@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import { AccountService } from '../account.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-createaccount',
@@ -8,6 +9,8 @@ import { AccountService } from '../account.service';
   styleUrls: ['./createaccount.component.css']
 })
 export class CreateaccountComponent {
+
+  public id:number = 0;
 
   public bankForm: FormGroup = new FormGroup({
 
@@ -41,8 +44,31 @@ export class CreateaccountComponent {
     )
   }
 
-  constructor(private accountService: AccountService) { }
+  constructor(private accountService: AccountService, private activatedRoute: ActivatedRoute) {
+
+    activatedRoute.params.subscribe(
+      (data:any)=>{
+        this.id = data.id;
+        accountService.getAccountDet(this.id).subscribe(
+          (data:any)=>{
+            this.bankForm.patchValue(data);
+          }
+        )
+      }
+    )
+   }
   submit() {
+    if(this.id){
+      this.accountService.updateAccount(this.id,this.bankForm.value).subscribe(
+        (data:any)=>{
+          alert("Updated SuccessFully");
+        },
+        (err:any)=>{
+          alert("Internal Service Error");
+        }
+      )
+    }
+    else{
     console.log(this.bankForm.value);
 
     this.accountService.createAccount(this.bankForm.value).subscribe(
@@ -54,7 +80,8 @@ export class CreateaccountComponent {
         alert("Internal Service Error");
       }
     )
-  }
+    }
+}
   bankDel(i:number){
     this.banksArrayFrom.removeAt(i);
   }

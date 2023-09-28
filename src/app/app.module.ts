@@ -40,6 +40,17 @@ import { CreateaccountComponent } from './createaccount/createaccount.component'
 import { ContactdetailsComponent } from './contactdetails/contactdetails.component';
 import { CreateroaldComponent } from './createroald/createroald.component';
 import { VehicledetailsComponent } from './vehicledetails/vehicledetails.component';
+import { AccountdetailsComponent } from './accountdetails/accountdetails.component';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
+import { TodoappComponent } from './todoapp/todoapp.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { MessageComponent } from './message/message.component';
+import { ItemComponent } from './item/item.component';
+import { NavComponent } from './nav/nav.component';
+import { CartComponent } from './cart/cart.component';
+import { AboutModuleModule } from './about.module/about.module.module';
+import { MessagePipe } from './message.pipe';
 
 @NgModule({
   declarations: [
@@ -77,14 +88,25 @@ import { VehicledetailsComponent } from './vehicledetails/vehicledetails.compone
     CreateaccountComponent,
     ContactdetailsComponent,
     CreateroaldComponent,
-    VehicledetailsComponent
+    VehicledetailsComponent,
+    AccountdetailsComponent,
+    UserdetailsComponent,
+    TodoappComponent,
+    ParentComponent,
+    ChildComponent,
+    MessageComponent,
+    ItemComponent,
+    NavComponent,
+    CartComponent,
+    MessagePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AboutModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

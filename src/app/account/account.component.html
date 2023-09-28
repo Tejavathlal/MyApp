@@ -45,6 +45,8 @@
         <th>Profie_Picture</th>
         <th>Id</th>
         <th>Delete</th>
+        <th>View</th>
+        <th>Edit</th>
         </tr>
     </thead>
     <tbody>
@@ -60,7 +62,8 @@
             <td>
                 <button (click)="deleteAcount(account.id)" class="btn btn-danger">Delete</button>
             </td>
-            
+            <td><button class="btn btn-info" (click)="view(account.id)">View</button></td>
+            <td><button class="btn btn-info" (click)="edit(account.id)">Edit</button></td>
         </tr>
     </tbody>
 </table>
